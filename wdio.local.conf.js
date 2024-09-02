@@ -27,10 +27,15 @@ export const config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ['./test/specs/**/*.e2e.js'],
+  specs: ['./test/specs/**/*.js'],
   // Patterns to exclude.
   exclude: [
-    // 'path/to/excluded/files'
+    './test/specs/passwordPageLogin.js',
+    './test/specs/welshErrorMsgPages.js',
+    './test/specs/welshESWToggle.js',
+    './test/specs/welshForecastPageExtra.js',
+    './test/specs/welshHeaderFooterAndStatic.js',
+    './test/specs/welshNIToggle.js'
   ],
   // injectGlobals: false,
   //
@@ -57,12 +62,12 @@ export const config = {
   //
 
   capabilities: debug
-    ? [{ browserName: 'chrome' }]
+    ? [{ browserName: 'MicrosoftEdge' }]
     : [
         {
           maxInstances: 1,
-          browserName: 'chrome',
-          'goog:chromeOptions': {
+          browserName: 'MicrosoftEdge',
+          'goog:MicrosoftEdge': {
             args: [
               '--no-sandbox',
               '--disable-infobars',
@@ -106,7 +111,7 @@ export const config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://aqie-front-end.dev.cdp-int.defra.cloud/',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,

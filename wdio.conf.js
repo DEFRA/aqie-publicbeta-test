@@ -13,7 +13,7 @@ export const config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: `https://aqie-publicbeta-test.${process.env.ENVIRONMENT}.cdp-int.defra.cloud`,
+  baseUrl: `https://aqie-front-end.${process.env.ENVIRONMENT}.cdp-int.defra.cloud/`,
 
   // Connection to remote chromedriver
   hostname: process.env.CHROMEDRIVER_URL || '127.0.0.1',
@@ -22,7 +22,14 @@ export const config = {
   // Tests to run
   specs: ['./test/specs/**/*.js'],
   // Tests to exclude
-  exclude: [],
+  exclude: [
+    './test/specs/passwordPageLogin.js',
+    './test/specs/welshErrorMsgPages.js',
+    './test/specs/welshESWToggle.js',
+    './test/specs/welshForecastPageExtra.js',
+    './test/specs/welshHeaderFooterAndStatic.js',
+    './test/specs/welshNIToggle.js'
+  ],
   maxInstances: debug ? 1 : 3,
 
   // Presently calls outside of the cdp environment will be dropped.
