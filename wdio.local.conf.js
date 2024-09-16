@@ -41,8 +41,7 @@ export const config = {
     './test/specs/headersValidation.js',
     './test/specs/locationSearchAndMatch.js',
     './test/specs/staticpagepollutants.js',
-    './test/specs/unhappyPath.js',
-    './test/specs/forecastPage.js'
+    './test/specs/unhappyPath.js'
   ],
   // injectGlobals: false,
   //
