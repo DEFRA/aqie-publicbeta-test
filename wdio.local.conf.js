@@ -35,7 +35,14 @@ export const config = {
     './test/specs/welshESWToggle.js',
     './test/specs/welshForecastPageExtra.js',
     './test/specs/welshHeaderFooterAndStatic.js',
-    './test/specs/welshNIToggle.js'
+    './test/specs/welshNIToggle.js',
+    './test/specs/cookiesBannerCheck.js',
+    './test/specs/footerValidations.js',
+    './test/specs/headersValidation.js',
+    './test/specs/locationSearchAndMatch.js',
+    './test/specs/staticpagepollutants.js',
+    './test/specs/unhappyPath.js',
+    './test/specs/forecastPage.js'
   ],
   // injectGlobals: false,
   //
@@ -111,7 +118,7 @@ export const config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'https://aqie-front-end.dev.cdp-int.defra.cloud/',
+  baseUrl: `https://aqie-front-end.dev.cdp-int.defra.cloud/`,
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,

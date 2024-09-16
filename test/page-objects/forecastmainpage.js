@@ -256,6 +256,9 @@ class ForecastMainPage {
     return this.pollutantNameHeader[0]
   }
 
+  get particulateMatterSubHeaders() {
+    return this.subHeaderPollutantLinks[1]
+  }
   /* get pollutantNearestRegions() {
     return $$(
       "h3 div[class='defra-toggletip defra-toggletip--open defra-toggletip--up']"
