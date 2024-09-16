@@ -409,92 +409,109 @@ dynlocationValue.forEach(
           sourcePollutantSummaryURlOutlook.trim()
         )
 
-        try {
-          await ForecastMainPage.pollutantsNameTableLinks.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start'
-          })
-        } catch (error) {
-          logger.info('ERRORINSCROLLINTOVIEW')
-          logger.error(error)
-        }
-        // await browser.scroll(0, 1500)
+        await ForecastMainPage.particulateMatterSubHeaders.scrollIntoView()
+        if (Array.isArray(ForecastMainPage.subHeadersinForecastPage)) {
+          try {
+            await ForecastMainPage.pollutantsNameTableLinks.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'start'
+            })
+          } catch (error) {
+            logger.info('ERRORINSCROLLINTOVIEW')
+            logger.error(error)
+          }
+          // await browser.scroll(0, 1500)
 
-        const getPollutantStationStr =
-          await ForecastMainPage.pollutantStationName.getText()
-        const getPollutantStation1 = await getPollutantStationStr.replace(
-          '\ni',
-          ''
-        )
+          const getPollutantStationStr =
+            await ForecastMainPage.pollutantStationName.getText()
+          const getPollutantStation1 = await getPollutantStationStr.replace(
+            '\ni',
+            ''
+          )
 
-        // get dynamic pollutant value
-        if (getPollutantStation1 === nearestRegionPollutantsSta1) {
-          const pollutantValues = await fetchMeasurements(
-            nearestRegionPollutantsSta1
-          )
-          const newKeys = {
-            NO2: 'Nitrogen dioxide',
-            SO2: 'Sulphur dioxide',
-            GE10: 'PM10',
-            PM25: 'PM2.5',
-            O3: 'Ozone'
-          }
-          const renamedDynPollutantValues = renameKeys(pollutantValues, newKeys)
-          // get pollutant UI table values
-          const getTableValues =
-            await ForecastMainPage.pollutantsFirstTableCollections()
-          const setsOfThree = await createSets(getTableValues, 3)
-          for (let j = 0; j < setsOfThree.length; j++) {
-            await pollutantsValueCheck(
-              setsOfThree[j],
-              renamedDynPollutantValues
+          // get dynamic pollutant value
+          if (getPollutantStation1 === nearestRegionPollutantsSta1) {
+            const pollutantValues = await fetchMeasurements(
+              nearestRegionPollutantsSta1
             )
-          }
-        } else if (getPollutantStation1 === nearestRegionPollutantsSta2) {
-          const pollutantValues = await fetchMeasurements(
-            nearestRegionPollutantsSta2
-          )
-          const newKeys = {
-            NO2: 'Nitrogen dioxide',
-            SO2: 'Sulphur dioxide',
-            GE10: 'PM10',
-            PM25: 'PM2.5',
-            O3: 'Ozone'
-          }
-          const renamedDynPollutantValues = renameKeys(pollutantValues, newKeys)
-          // get pollutant UI table values
-          const getTableValues =
-            await ForecastMainPage.pollutantsFirstTableCollections()
-          const setsOfThree = await createSets(getTableValues, 3)
-          for (let j = 0; j < setsOfThree.length; j++) {
-            await pollutantsValueCheck(
-              setsOfThree[j],
-              renamedDynPollutantValues
+            const newKeys = {
+              NO2: 'Nitrogen dioxide',
+              SO2: 'Sulphur dioxide',
+              GE10: 'PM10',
+              PM25: 'PM2.5',
+              O3: 'Ozone'
+            }
+            const renamedDynPollutantValues = renameKeys(
+              pollutantValues,
+              newKeys
             )
-          }
-        } else if (getPollutantStation1 === nearestRegionPollutantsSta3) {
-          const pollutantValues = await fetchMeasurements(
-            nearestRegionPollutantsSta3
-          )
-          const newKeys = {
-            NO2: 'Nitrogen dioxide',
-            SO2: 'Sulphur dioxide',
-            GE10: 'PM10',
-            PM25: 'PM2.5',
-            O3: 'Ozone'
-          }
-          const renamedDynPollutantValues = renameKeys(pollutantValues, newKeys)
-          // get pollutant UI table values
-          const getTableValues =
-            await ForecastMainPage.pollutantsFirstTableCollections()
-          const setsOfThree = await createSets(getTableValues, 3)
-          for (let j = 0; j < setsOfThree.length; j++) {
-            await pollutantsValueCheck(
-              setsOfThree[j],
-              renamedDynPollutantValues
+            // get pollutant UI table values
+            const getTableValues =
+              await ForecastMainPage.pollutantsFirstTableCollections()
+            const setsOfThree = await createSets(getTableValues, 3)
+            for (let j = 0; j < setsOfThree.length; j++) {
+              await pollutantsValueCheck(
+                setsOfThree[j],
+                renamedDynPollutantValues
+              )
+            }
+          } else if (getPollutantStation1 === nearestRegionPollutantsSta2) {
+            const pollutantValues = await fetchMeasurements(
+              nearestRegionPollutantsSta2
             )
+            const newKeys = {
+              NO2: 'Nitrogen dioxide',
+              SO2: 'Sulphur dioxide',
+              GE10: 'PM10',
+              PM25: 'PM2.5',
+              O3: 'Ozone'
+            }
+            const renamedDynPollutantValues = renameKeys(
+              pollutantValues,
+              newKeys
+            )
+            // get pollutant UI table values
+            const getTableValues =
+              await ForecastMainPage.pollutantsFirstTableCollections()
+            const setsOfThree = await createSets(getTableValues, 3)
+            for (let j = 0; j < setsOfThree.length; j++) {
+              await pollutantsValueCheck(
+                setsOfThree[j],
+                renamedDynPollutantValues
+              )
+            }
+          } else if (getPollutantStation1 === nearestRegionPollutantsSta3) {
+            const pollutantValues = await fetchMeasurements(
+              nearestRegionPollutantsSta3
+            )
+            const newKeys = {
+              NO2: 'Nitrogen dioxide',
+              SO2: 'Sulphur dioxide',
+              GE10: 'PM10',
+              PM25: 'PM2.5',
+              O3: 'Ozone'
+            }
+            const renamedDynPollutantValues = renameKeys(
+              pollutantValues,
+              newKeys
+            )
+            // get pollutant UI table values
+            const getTableValues =
+              await ForecastMainPage.pollutantsFirstTableCollections()
+            const setsOfThree = await createSets(getTableValues, 3)
+            for (let j = 0; j < setsOfThree.length; j++) {
+              await pollutantsValueCheck(
+                setsOfThree[j],
+                renamedDynPollutantValues
+              )
+            }
           }
+        } else {
+          await expect(
+            Array.isArray(ForecastMainPage.subHeadersinForecastPage).toString()
+          ).toMatch('true')
+          logger.error('--- NO POLLUTANTS TABLE TO DISPLAY --------')
         }
         await browser.deleteCookies(['airaqie_cookie'])
         logger.info('--- FMP EndScenario daqi value-direct search --------')
