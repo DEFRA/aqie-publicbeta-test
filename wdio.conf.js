@@ -31,8 +31,8 @@ export const config = {
     './test/specs/welshNIToggle.js',
     './test/specs/cookiesBannerCheck.js',
     './test/specs/footerValidations.js',
-    './test/specs/headersValidation.js',
-    './test/specs/locationSearchAndMatch.js'    
+    './test/specs/locationSearchAndMatch.js',
+    './test/specs/forecastPageExtra.js'
   ],
   maxInstances: debug ? 1 : 3,
 
