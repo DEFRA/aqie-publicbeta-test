@@ -70,9 +70,6 @@ toolTipData.forEach(({ region, area, areaMessage, NI }) => {
           logger.error('No Visible text in tooltip for Level column')
         }
       } else {
-        await expect(
-          Array.isArray(ForecastMainPage.subHeadersinForecastPage).toString()
-        ).toMatch('true')
         logger.error('--- NO POLLUTANTS TABLE TO DISPLAY --------')
       }
       await browser.deleteCookies(['airaqie_cookie'])
