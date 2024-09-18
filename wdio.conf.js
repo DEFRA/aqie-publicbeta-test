@@ -28,7 +28,11 @@ export const config = {
     './test/specs/welshESWToggle.js',
     './test/specs/welshForecastPageExtra.js',
     './test/specs/welshHeaderFooterAndStatic.js',
-    './test/specs/welshNIToggle.js'
+    './test/specs/welshNIToggle.js',
+    './test/specs/cookiesBannerCheck.js',
+    './test/specs/footerValidations.js',
+    './test/specs/locationSearchAndMatch.js',
+    './test/specs/forecastPageExtra.js'
   ],
   maxInstances: debug ? 1 : 3,
 
