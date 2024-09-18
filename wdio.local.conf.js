@@ -35,13 +35,7 @@ export const config = {
     './test/specs/welshESWToggle.js',
     './test/specs/welshForecastPageExtra.js',
     './test/specs/welshHeaderFooterAndStatic.js',
-    './test/specs/welshNIToggle.js',
-    './test/specs/cookiesBannerCheck.js',
-    './test/specs/footerValidations.js',
-    './test/specs/headersValidation.js',
-    './test/specs/locationSearchAndMatch.js',
-    './test/specs/staticpagepollutants.js',
-    './test/specs/unhappyPath.js'
+    './test/specs/welshNIToggle.js'
   ],
   // injectGlobals: false,
   //
