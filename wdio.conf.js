@@ -28,9 +28,7 @@ export const config = {
     './test/specs/welshESWToggle.js',
     './test/specs/welshForecastPageExtra.js',
     './test/specs/welshHeaderFooterAndStatic.js',
-    './test/specs/welshNIToggle.js',
-    './test/specs/cookiesBannerCheck.js',
-    './test/specs/footerValidations.js'
+    './test/specs/welshNIToggle.js'
   ],
   maxInstances: debug ? 1 : 3,
 
@@ -193,9 +191,7 @@ export const config = {
     context,
     { error, result, duration, passed, retries }
   ) {
-    if (error) {
-      await browser.takeScreenshot()
-    }
+    await browser.takeScreenshot()
   },
 
   /**

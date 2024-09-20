@@ -18,8 +18,8 @@
     "lint:fix": "eslint . --fix",
     "postinstall": "npm run setup:husky",
     "setup:husky": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
-    "report": "allure generate allure-results --single-file --clean",
-    "report:publish": "npm run report; ./bin/publish-tests.sh"
+    "report": "allure generate allure-results --clean",
+    "report:publish": "allure generate allure-results --clean; ./bin/publish-tests.sh"
   },
   "dependencies": {
     "@babel/cli": "7.23.4",
