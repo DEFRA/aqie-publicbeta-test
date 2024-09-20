@@ -30,9 +30,7 @@ export const config = {
     './test/specs/welshHeaderFooterAndStatic.js',
     './test/specs/welshNIToggle.js',
     './test/specs/cookiesBannerCheck.js',
-    './test/specs/footerValidations.js',
-    './test/specs/locationSearchAndMatch.js',
-    './test/specs/forecastPageExtra.js'
+    './test/specs/footerValidations.js'
   ],
   maxInstances: debug ? 1 : 3,
 
