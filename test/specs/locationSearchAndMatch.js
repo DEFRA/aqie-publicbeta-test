@@ -31,7 +31,7 @@ describe('Location Search', () => {
   locationValue.forEach(({ region }) => {
     it('Start Page', async () => {
       logger.info('--- LocSearch StartScenario Start LSMP Page --------')
-      logger.info(`Data : ${region}`)
+      logger.info(`RegionData : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       // password-block
       await passwordPageLogin.passwordPageLogin()
@@ -99,7 +99,7 @@ describe('Location Search', () => {
       logger.info(
         '--- LocSearch StartScenario NI Location Search Page --------'
       )
-      logger.info(`Data : ${region}`)
+      logger.info(`RegionData : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       const locationNISearchBoxText = 'Enter a postcode'
       await passwordPageLogin.passwordPageLogin()
@@ -128,7 +128,7 @@ describe('Location Search', () => {
       logger.info(
         '--- LocSearch StartScenario NI Location Search-Unhappy Page --------'
       )
-      logger.info(`Data : ${region}`)
+      logger.info(`RegionData : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       const locationNISearchBoxText = 'Enter a postcode'
       await passwordPageLogin.passwordPageLogin()
@@ -160,7 +160,7 @@ describe('Location Search', () => {
       logger.info(
         '--- LocSearch StartScenario region-case-sensitive location search Page --------'
       )
-      logger.info(`Data : ${region}`)
+      logger.info(`RegionData : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       await browser.url('/search-location')
       await browser.maximizeWindow()
@@ -196,7 +196,7 @@ describe('Location Search', () => {
       logger.info(
         '--- LocSearch StartScenario postal-code-sensitive location search Page --------'
       )
-      logger.info(`Data : ${region}`)
+      logger.info(`RegionData : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       const locationESWSearchBoxText = 'Enter a location or postcode'
       await browser.url('/search-location')

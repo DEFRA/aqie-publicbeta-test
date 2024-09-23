@@ -30,7 +30,7 @@ export const config = {
     './test/specs/welshHeaderFooterAndStatic.js',
     './test/specs/welshNIToggle.js'
   ],
-  maxInstances: debug ? 1 : 3,
+  maxInstances: 1,
 
   // Presently calls outside of the cdp environment will be dropped.
   // In chrome this can result in pages never finishing loading and the test step timing out.
@@ -39,6 +39,7 @@ export const config = {
   // This causes the calls to fail instantly rather than timeout.
   capabilities: [
     {
+      maxInstances: 1,
       browserName: 'chrome',
       'goog:chromeOptions': {
         args: [
