@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "engines": {
-    "node": ">=20.3.0"
+    "node": ">=20.11.1"
   },
   "author": "Defra DDTS",
   "license": "OGL-UK-3.0",
@@ -27,7 +27,7 @@
     "@babel/preset-env": "7.23.8",
     "@babel/register": "7.23.7",
     "@elastic/ecs-pino-format": "1.5.0",
-    "@wdio/spec-reporter": "8.29.0",
+    "@wdio/spec-reporter": "8.32.4",
     "allure-commandline": "2.30.0",
     "await-reduce": "1.2.3",
     "axios": "1.6.8",
@@ -45,11 +45,11 @@
     "xml-js": "1.6.11"
   },
   "devDependencies": {
-    "@wdio/allure-reporter": "9.0.8",
-    "@wdio/cli": "9.0.9",
-    "@wdio/globals": "9.0.9",
-    "@wdio/local-runner": "9.0.9",
-    "@wdio/mocha-framework": "9.0.8",
+    "@wdio/allure-reporter": "8.36.1",
+    "@wdio/cli": "8.35.1",
+    "@wdio/globals": "8.35.1",
+    "@wdio/local-runner": "8.35.1",
+    "@wdio/mocha-framework": "8.35.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
