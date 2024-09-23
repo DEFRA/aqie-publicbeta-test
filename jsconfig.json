@@ -5,7 +5,8 @@
     "paths": {
       "~/*": ["./*"],
       "page-objects/*": ["./test/page-objects/*"],
-      "components/*": ["./test/components/*"]
+      "components/*": ["./test/components/*"],
+      "helpers/*": ["./test/helpers/*"]
     }
   },
   "exclude": ["node_modules", "build"]
