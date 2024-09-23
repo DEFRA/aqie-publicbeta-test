@@ -58,6 +58,7 @@ describe('AQIE-unhappyPath', () => {
       logger.info(
         '--- AQIEUnhap StartScenario invalid page search-invalid postcode & special characters--------'
       )
+      logger.info(`Data : ${region}`)
       await browser.deleteCookies(['airaqie_cookie'])
       // password-block
       await passwordPageLogin.passwordPageLogin()
