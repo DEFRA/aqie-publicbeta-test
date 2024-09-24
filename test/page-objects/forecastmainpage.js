@@ -124,6 +124,21 @@ class ForecastMainPage {
   }
 
   // Public Beta
+  get todayPollutantSummaryTabTitle() {
+    return $("a[id='tab_today']")
+  }
+
+  // Public Beta
+  get tomorrowPollutantSummaryTabTitle() {
+    return $("a[id='tab_tomorrow']")
+  }
+
+  // Public Beta
+  get outlookPollutantSummaryTabTitle() {
+    return $("a[id='tab_outlook']")
+  }
+
+  // Public Beta
   get todayPollutantSummaryTabs() {
     return $("div[id='today'] p")
   }

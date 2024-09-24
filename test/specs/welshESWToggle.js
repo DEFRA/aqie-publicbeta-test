@@ -78,14 +78,30 @@ describe('ESW-Toggle-Flow', () => {
       await LocationMatchPage.firstLinkOfLocationMatch.click()
       // Click Welsh Toogle button
       await locationSearchPage.linkButtonWelsh.click()
+      // Check for next 4 days forecast
+      const captionNext4DaysHeader =
+        await ForecastMainPage.getNext4DaysForecastHeader.getText()
+      await expect(captionNext4DaysHeader).toMatch(
+        'Y rhagolwg ar gyfer y 4 diwrnod nesaf'
+      )
+      const todayPollutantSummaryTabTitle =
+        await ForecastMainPage.todayPollutantSummaryTabTitle.getText()
+      const tomorrowPollutantSummaryTabTitle =
+        await ForecastMainPage.tomorrowPollutantSummaryTabTitle.getText()
+      const outlookPollutantSummaryTabTitle =
+        await ForecastMainPage.outlookPollutantSummaryTabTitle.getText()
+      await expect(todayPollutantSummaryTabTitle).toMatch('Heddiw')
+      await expect(tomorrowPollutantSummaryTabTitle).toMatch('Yfory')
+      await expect(outlookPollutantSummaryTabTitle).toMatch('Rhagolwg')
+
       const getWelshUKSummary =
         await ForecastMainPage.pollutantsUKSummaryLinks.getText()
-      await expect(getWelshUKSummary).toMatch('Crynodeb o lygredd aer y UK')
+      await expect(getWelshUKSummary).toMatch('Rhagolwg y DU')
       // Click English Toogle button
       await locationSearchPage.linkButtonEnglish.click()
       const getUKSummaryTitle =
         await ForecastMainPage.pollutantsUKSummaryLinks.getText()
-      await expect(getUKSummaryTitle).toMatch('UK air pollution summary')
+      await expect(getUKSummaryTitle).toMatch('UK forecast')
       // Click Welsh Toogle button
       await locationSearchPage.linkButtonWelsh.click()
       const welshChangeSearchLocation =
@@ -102,7 +118,7 @@ describe('ESW-Toggle-Flow', () => {
       await locationSearchPage.clickContinueBtn()
       const getUKSummaryTitlebk =
         await ForecastMainPage.pollutantsUKSummaryLinks.getText()
-      await expect(getUKSummaryTitlebk).toMatch('Crynodeb o lygredd aer y UK')
+      await expect(getUKSummaryTitlebk).toMatch('Rhagolwg y DU')
       await browser.deleteCookies(['airaqie_cookie'])
     })
   })
