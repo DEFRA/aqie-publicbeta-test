@@ -262,7 +262,7 @@ dynlocationValue.forEach(
     describe('Forecast Main Page', () => {
       it('daqi value-direct search', async () => {
         logger.info('--- FMP StartScenario daqi value-direct search --------')
-        logger.info(`Data : ${region}`)
+        logger.info(`RegionData : ${region}`)
         await browser.deleteCookies(['airaqie_cookie'])
         await passwordPageLogin.passwordPageLogin()
         await startNowPage.startNowBtnClick()
@@ -387,6 +387,16 @@ dynlocationValue.forEach(
         const sourcePollutantSummaryURlOutlook =
           await sourcePollutantSummaryUrl.outlook
         // Today Forecast
+        const todayPollutantSummaryTabTitle =
+          await ForecastMainPage.todayPollutantSummaryTabTitle.getText()
+        const tomorrowPollutantSummaryTabTitle =
+          await ForecastMainPage.tomorrowPollutantSummaryTabTitle.getText()
+        const outlookPollutantSummaryTabTitle =
+          await ForecastMainPage.outlookPollutantSummaryTabTitle.getText()
+        await expect(todayPollutantSummaryTabTitle).toMatch('Today')
+        await expect(tomorrowPollutantSummaryTabTitle).toMatch('Tomorrow')
+        await expect(outlookPollutantSummaryTabTitle).toMatch('Outlook')
+
         await ForecastMainPage.todayPollutantSummaryTab.click()
         const ukForecastTodayPara =
           await ForecastMainPage.todayPollutantSummaryTabs.getText()

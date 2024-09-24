@@ -22,14 +22,7 @@ export const config = {
   // Tests to run
   specs: ['./test/specs/**/*.js'],
   // Tests to exclude
-  exclude: [
-    './test/specs/passwordPageLogin.js',
-    './test/specs/welshErrorMsgPages.js',
-    './test/specs/welshESWToggle.js',
-    './test/specs/welshForecastPageExtra.js',
-    './test/specs/welshHeaderFooterAndStatic.js',
-    './test/specs/welshNIToggle.js'
-  ],
+  exclude: ['./test/specs/passwordPageLogin.js'],
   maxInstances: 1,
 
   // Presently calls outside of the cdp environment will be dropped.
