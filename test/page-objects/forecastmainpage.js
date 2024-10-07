@@ -12,6 +12,12 @@ class ForecastMainPage {
     return $$("h2[class='govuk-heading-m']")
   }
 
+  async pollutantsHeaderLinksArrCheck() {
+    const arr = await $$("h2[class='govuk-heading-m']")
+    const arrcheck = Array.isArray(arr)
+    return arrcheck
+  }
+
   // public Beta - 4 days forecast
   get getNext4DaysForecastHeader() {
     return $("caption[class*='govuk-!-margin-bottom-4']")
@@ -76,7 +82,7 @@ class ForecastMainPage {
   // public beta
 
   async daqiForecastValue() {
-    const count = await $$("td[class*='daqi-selected']").length
+    const count = await $$("div[class*='daqi-selected']").length
     return count.toString()
   }
 
@@ -230,6 +236,26 @@ class ForecastMainPage {
 
   get pollutantsLink() {
     return $$("li a[class='govuk-link']")
+  }
+
+  get pollutantsLinkOzone() {
+    return this.pollutantsLink[1]
+  }
+
+  get pollutantsLinkNO2() {
+    return this.pollutantsLink[2]
+  }
+
+  get pollutantsLinkSO2() {
+    return this.pollutantsLink[3]
+  }
+
+  get pollutantsLinkPM25() {
+    return this.pollutantsLink[4]
+  }
+
+  get pollutantsLinkPM10() {
+    return this.pollutantsLink[5]
   }
 
   get subHeaderPollutantLinks() {

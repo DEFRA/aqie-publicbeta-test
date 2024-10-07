@@ -421,7 +421,7 @@ dynlocationValue.forEach(
         )
 
         await ForecastMainPage.particulateMatterSubHeaders.scrollIntoView()
-        if (Array.isArray(ForecastMainPage.subHeadersinForecastPage)) {
+        if (await ForecastMainPage.pollutantsHeaderLinksArrCheck()) {
           try {
             await ForecastMainPage.pollutantsNameTableLinks.scrollIntoView({
               behavior: 'smooth',
