@@ -83,7 +83,7 @@ async function pollutantsPageNavigations(matchPollutantSubHeader) {
     const headerPM10 = 'Particulate matter (PM10)'
     const SubHeader1Value = 'Sources of PM10'
     const SubHeader2Value = 'Health effects '
-    const pm10Header = await pm25StaticPage.pm25HeaderDisplay.getText()
+    const pm10Header = await pm10StaticPage.pm10HeaderDisplay.getText()
     await expect(headerPM10).toMatch(pm10Header)
     const pm10SubHeader1 =
       await pm10StaticPage.pm10SubHeaderDisplay[0].getText()

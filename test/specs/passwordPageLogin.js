@@ -6,7 +6,9 @@ class PasswordPageLogin {
   async passwordPageLogin() {
     await browser.url('')
     await browser.maximizeWindow()
-    await expect(browser).toHaveTitle('Sign in - Private beta air quality')
+    await expect(browser).toHaveTitle(
+      'Sign in - Check local air quality - GOV.UK'
+    )
     const PasswordPageHeaderText = 'This is a private beta'
     const PasswordPageStatement =
       'You should only continue if you have been invited to.'

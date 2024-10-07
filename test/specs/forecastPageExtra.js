@@ -29,7 +29,8 @@ toolTipData.forEach(({ region, area, areaMessage, NI }) => {
       }
       // await browser.scroll(0, 1500)
       await ForecastMainPage.particulateMatterSubHeaders.scrollIntoView()
-      if (Array.isArray(ForecastMainPage.subHeadersinForecastPage)) {
+      ForecastMainPage.pollutantsHeaderLinksArrCheck()
+      if (await ForecastMainPage.pollutantsHeaderLinksArrCheck()) {
         await ForecastMainPage.pollutantStationName.scrollIntoView()
         const LatestIconMessage =
           'Readings are measured every hour. The unit µg/㎥ stands for micrograms (one millionth of a gram) per cubic metre of air.'
@@ -73,6 +74,7 @@ toolTipData.forEach(({ region, area, areaMessage, NI }) => {
       } else {
         logger.error('--- NO POLLUTANTS TABLE TO DISPLAY --------')
       }
+
       await browser.deleteCookies(['airaqie_cookie'])
       logger.info('--- FMPEx EndScenario Tool tip --------')
     })
